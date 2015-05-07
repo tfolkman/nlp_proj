@@ -1,0 +1,8 @@
+DATA SOURCES
+
+Test and Training: http://www.d.umn.edu/~tpederse/data.html. Senseval-1 in Senseval-2 format with fixes
+
+GOLD: http://www.senseval.org/ . Then click senseval-1 link. Then click english senseval resources
+
+MAPPING: Same source as GOLD
+
