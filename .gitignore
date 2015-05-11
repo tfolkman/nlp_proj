@@ -1,4 +1,5 @@
 data/test_train/
 data/Sval1to2.fix/
 data/GOLD/
-
+data/sem_data/
+sab_work/
