@@ -1,3 +1,9 @@
+\documentclass[12pt]{article}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
 \title{Exploiting Semantic Relationships for Word Sense Disambiguation}
 \author{
        Tyler Folkman
@@ -6,105 +12,143 @@
 }
 \date{May 15, 2015}
 
-\documentclass[12pt]{article}
-
 \begin{document}
 \maketitle
 
+
+
+
 \begin{abstract}
-The task of word sense disambiguation has historically been approached by creating lexical and syntactic features from the context surrounding the word of interest. These methods have been deeply studied, but little work has been done on incorporating semantic relationships to help disambiguate the word of interest. We present a novel approach that leverages the Abstract Meaning Representation semantic parse of a sentence to derive semantic features. todo: We show that ...
+
+
 \end{abstract}
 
+
+
+
 \section{Introduction}
-Word sense disambiguation (WSD) is the task of identifying the sense of a word with possible meanings based on the context in which the word is used. This task has been explored fairly deeply in part because of the Senseval\cite{se} competitions. These competitions provide data with the purpose to evaluate the strengths and weaknesses of various WSD systems. Through studying these systems, it suggests that there is no best method for solving WSD systems. Instead, features and learning algorithms are dependent on one another\cite{kh}. In fact, Pedersen et al. have shown that a simple ensemble method using unigrams, bigrams, and part of speech features has the potential to achieve state of the art results\cite{pend}. We extend this work by exploring the effectiveness of including additional features based on the semantics of the context. To extract semantics we make use of a rooted, labeled graph called an Abstract Meaning Representation which aims to semantically represent a sentence\cite{amr}. todo: summarize results and conclusions and novelness / why important / interesting
 
-\section{Abstract Meaning Representation}
 
-Abstract Meaning Representation (AMR) aims to assign the same AMR to sentences that have the same basic meaning. For example, the sentences, "The man described the mission as a disaster" and "As the man described it, the mission was a disaster." should both produce the same AMR. This AMR looks like this:
 
-\begin{verbatim}
-(d / describe-01
-    :arg0 (m / man)
-    :arg1 (m2 / mission)
-    :arg2 (d / disaster))
-\end{verbatim}
-
-To help do this, the AMR representation makes use of PropBank framesets. To create the AMR parse for our sentences we make use of the pre-trained JAMR parser\cite{jamr}. This parser was developed by Jeffrey Flanigan from Carnegie Mellon University and is pre-trained on 18,779 sentences.
 
 \section{Problem Definition and Algorithm}
 
-todo: Describe in reasonable detail the algorithm you are using to address this problem. A psuedocode description of the algorithm you are using is frequently useful. Trace through a concrete example, showing how your algorithm processes this example. The example should be complex enough to illustrate all of the important aspects of the problem but simple enough to be easily understood. If possible, an intuitively meaningful example is better than one with meaningless symbols. 
 
-\subsection{Lexical and Syntactic Features}
+\subsection{Task Definition}
 
-To understand whether or not semantic features extracted from the AMR parse help improve current systems we build a baseline model based on the Syntalex system developed by Pedersen et al\cite{syntalex}. To provide a concrete example, consider the following sentence:
 
-\vspace{4mm}
-The accident appeared to have little effect on the Christmas party, except to lengthen it considerably.
-\vspace{4mm}
+\subsection{Algorithm Definition}
 
-\noindent
-In this sentence the word of interest is accident. The sentence or sentences provided with the word of interest are called the context. For our baseline system we extract unigrams and bigrams from the context as our lexical features. We also extract the part of speech tags from the word of interest and the two words before and after for the sentence that contains the word of interest. If no words are available we tag it as unknown. Lastly, we extract the following features from the syntactic parse of the sentence containing the word of interest: the head word of the phrase housing the word of interest, the head word of its parent phrase, the phrase housing the target word, and the parent phrase. To get the syntactic parse and the parts of speech we make use of the Stanford parser\cite{sp}. To make our parse features more clear, in our example, the head word and head word of the parent are both 'The', the phrase housing the word of interest is 'NP' , and the parent phrase is 'S.'
 
-\subsection{Semantic Features}
+\subsubsection{Lexical and Syntactic Features}
 
-todo: describe the semantic features we extract
+
+\subsubsection{Semantic Features}
+
+
 
 
 \section{Experimental Evaluation}
+
+
 \subsection{Methodology}
 
-To evaluate our results, we make use of the Senseval-1 data. We obtained a fixed version of the data\cite{data} from Ted Pedersen and used the gold standard data and mappings from Senseval's website\cite{se}. These data contain 35 words in English with noun, verb, adjective, and indeterminate parts of speech. The indeterminate words were words for which the goal was to also determine the major word class. We ignored these words for our purposes and selected the following five words to test our results: excess, the verb version of float, brilliant, accident, and the verb version of promise. These words were selected because they provide at least one word from each part of speech and represent words with small and large amounts of training data.
-
-\begin{table}[h]
-\begin{tabular}{l|lll}
-\hline
-Word      & Part of Speech & Training Size & Testing Size \\ \hline
-Excess    & N              & 178           & 186          \\
-Float     & V              & 183           & 229          \\
-Brilliant & A              & 441           & 229          \\ 
-Accident  & N              & 1,234         & 267          \\
-Promise   & V              & 1,163         &   224          
-\end{tabular}
-\end{table}
-
-todo: What are criteria you are using to evaluate your method? What specific hypotheses does your experiment test? Describe the experimental methodology that you used. What are the dependent and independent variables? What is the training/test data that was used, and why is it realistic or interesting? Exactly what performance data did you collect and how are you presenting and analyzing it? Comparisons to competing methods that address the same problem are particularly useful.
 
 \subsection{Results}
 
-As an additional baseline, we also include the average scores from the Senseval-1 competiton\cite{se}. We compare on fine-grained recall results for S systems. We use fine-grained results because we only count scores for identical matches and S systems because we are doing supervised training. Lastly, we evaluate our results using recall which is defined as the percentage of right answers on all instance in the test set\cite{recall}.
 
-todo: also include senseval best system?
-
-\begin{table}[h]
-\begin{tabular}{l|l}
-\hline
-Word      & Senseval Average  \\ \hline
-Excess    & 0.652                     \\
-Float     & 0.402                      \\
-Brilliant & 0.443                      \\ 
-Accident  & 0.802                   \\
-Promise   & 0.741                      
+\FloatBarrier
+\begin{table}[h!]
+\begin{tabular}{lrrrr}
+\toprule
+{} &  Random Forest &       SVM &  Ensemble 1 &  Ensemble 2 \\
+\midrule
+All Features       &       0.660851 &  0.704365 &    0.702876 &    0.696104 \\
+Semantic Features  &       0.600540 &  0.634767 &    0.627087 &    0.621083 \\
+Syntactic Features &       0.665298 &  0.699744 &    0.703718 &    0.698016 \\
+\bottomrule
 \end{tabular}
+\caption{Average Results}
 \end{table}
+\FloatBarrier
 
-todo: Present the quantitative results of your experiments. Graphical data presentation such as graphs and histograms are frequently better than tables. What are the basic differences revealed in the data. Are they statistically significant?
+\begin{figure}[h!]
+\caption{Generous-a}
+\centering
+\includegraphics[width=1.0\textwidth]{../graphics/plots/generous-a.png}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[h!]
+\caption{Accident-n}
+\centering
+\includegraphics[width=1.0\textwidth]{../graphics/plots/accident-n.png}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[h!]
+\caption{Float-n}
+\centering
+\includegraphics[width=1.0\textwidth]{../graphics/plots/float-v.png}
+\end{figure}
+\FloatBarrier
+
 
 \subsection{Discussion}
 
-todo: Is your hypothesis supported? What conclusions do the results support about the strengths and weaknesses of your method compared to other methods? How can the results be explained in terms of the underlying properties of the algorithm and/or the data. 
+
+
 
 \section{Related Work}
 
-todo: Answer the following questions for each piece of related work that addresses the same or a similar problem. What is their problem and method? How is your problem and method different? Why is your problem and method better? 
+
+
 
 \section{Future Work}
 
-todo: What are the major shortcomings of your current method? For each shortcoming, propose additions or enhancements that would help overcome it.
+
+
 
 \section{Conclusion}
 
-todo: Briefly summarize the important results and conclusions presented in the paper. What are the most important points illustrated by your work? How will your results improve future research and applications in the area? 
+
+
+\newpage
+\section{Appendix}
+
+\begin{tabular}{lrrrrl}
+\toprule
+{} &  Random Forest &       SVM &  Ensemble 1 &  Ensemble 2 &         Word \\
+\midrule
+All Features       &       0.847940 &  0.914232 &    0.915356 &    0.911236 &   accident-n \\
+Semantic Features  &       0.810487 &  0.828090 &    0.831461 &    0.832584 &   accident-n \\
+Syntactic Features &       0.832584 &  0.908989 &    0.907491 &    0.902622 &   accident-n \\
+All Features       &       0.675120 &  0.727273 &    0.749282 &    0.740191 &     bother-v \\
+Semantic Features  &       0.547368 &  0.583254 &    0.581340 &    0.575598 &     bother-v \\
+Syntactic Features &       0.685167 &  0.740670 &    0.765550 &    0.759330 &     bother-v \\
+All Features       &       0.482969 &  0.499563 &    0.490393 &    0.488646 &  brilliant-a \\
+Semantic Features  &       0.472052 &  0.504367 &    0.489956 &    0.489956 &  brilliant-a \\
+Syntactic Features &       0.473799 &  0.503930 &    0.482096 &    0.482096 &  brilliant-a \\
+All Features       &       0.635023 &  0.658986 &    0.671429 &    0.671889 &     derive-v \\
+Semantic Features  &       0.596774 &  0.623963 &    0.621659 &    0.616590 &     derive-v \\
+Syntactic Features &       0.646083 &  0.627650 &    0.670046 &    0.663594 &     derive-v \\
+All Features       &       0.773656 &  0.856452 &    0.824194 &    0.806989 &     excess-n \\
+Semantic Features  &       0.636559 &  0.673118 &    0.660753 &    0.650000 &     excess-n \\
+Syntactic Features &       0.787097 &  0.851613 &    0.829570 &    0.819892 &     excess-n \\
+All Features       &       0.436245 &  0.458952 &    0.465066 &    0.453275 &      float-v \\
+Semantic Features  &       0.410917 &  0.460699 &    0.444105 &    0.425328 &      float-v \\
+Syntactic Features &       0.423144 &  0.451965 &    0.447598 &    0.436245 &      float-v \\
+All Features       &       0.460352 &  0.552863 &    0.522907 &    0.513216 &   generous-a \\
+Semantic Features  &       0.432159 &  0.478855 &    0.470485 &    0.463877 &   generous-a \\
+Syntactic Features &       0.483700 &  0.536123 &    0.538767 &    0.521586 &   generous-a \\
+All Features       &       0.865625 &  0.884375 &    0.884821 &    0.884375 &    promise-v \\
+Semantic Features  &       0.847321 &  0.854464 &    0.851339 &    0.850446 &    promise-v \\
+Syntactic Features &       0.868304 &  0.871875 &    0.882589 &    0.882143 &    promise-v \\
+All Features       &       0.770732 &  0.786585 &    0.802439 &    0.795122 &       sack-n \\
+Semantic Features  &       0.651220 &  0.706098 &    0.692683 &    0.685366 &       sack-n \\
+Syntactic Features &       0.787805 &  0.804878 &    0.809756 &    0.814634 &       sack-n \\
+\bottomrule
+\end{tabular} 
 
 \begin{thebibliography}{9}
 
@@ -141,6 +185,45 @@ Edmonds, Philip. "SENSEVAL: The evaluation of word sense disambiguation systems.
 
 
 
+
+
+
+\begin{table}[h]
+\begin{tabular}{l|lll}
+\hline
+Word      & Part of Speech & Training Size & Testing Size \\ \hline
+Excess    & N              & 178           & 186          \\
+Float     & V              & 183           & 229          \\
+Brilliant & A              & 441           & 229          \\ 
+Accident  & N              & 1,234         & 267          \\
+Promise   & V              & 1,163         &   224          
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\begin{tabular}{l|l}
+\hline
+Word      & Senseval Average  \\ \hline
+Excess    & 0.652                     \\
+Float     & 0.402                      \\
+Brilliant & 0.443                      \\ 
+Accident  & 0.802                   \\
+Promise   & 0.741                      
+\end{tabular}
+\end{table}
+
+\begin{verbatim}
+(d / describe-01
+    :arg0 (m / man)
+    :arg1 (m2 / mission)
+    :arg2 (d / disaster))
+\end{verbatim}
+
+\vspace{4mm}
+The accident appeared to have little effect on the Christmas party, except to lengthen it considerably.
+\vspace{4mm}
+
+\noindent
 
 
   
