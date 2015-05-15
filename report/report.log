@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  14 MAY 2015 16:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  15 MAY 2015 10:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -106,35 +106,86 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen125
 \Gm@dimlist=\toks15
 )
+(/usr/local/texlive/2014/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2014/03/24 3.9k The Babel package
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2012/08/20 v3.3p English support from the babel system
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2014/03/24 3.9k Babel common definitions
+\babel@savecnt=\count95
+\U@D=\dimen126
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2011/10/22 v5.1d context-sensitive quotations
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/etex-pkg/etex.sty
+Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+\et@xins=\count96
+)
+\etb@tempcnta=\count97
+)
+\csq@reset=\count98
+\csq@gtype=\count99
+\csq@glevel=\count100
+\csq@qlevel=\count101
+\csq@maxlvl=\count102
+\csq@tshold=\count103
+\csq@ltx@everypar=\toks16
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2011/10/22 v5.1d csquotes generic definitions
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+)
+Package csquotes Info: Enabling multilingual quotes.
+Package csquotes Info: Redefining alias 'english' -> 'english/american'.
+)
+Package csquotes Info: Allocating character ".
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
 
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count95
-\scratchdimen=\dimen126
+\scratchcounter=\count104
+\scratchdimen=\dimen127
 \scratchbox=\box26
-\nofMPsegments=\count96
-\nofMParguments=\count97
-\everyMPshowfont=\toks16
-\MPscratchCnt=\count98
-\MPscratchDim=\dimen127
-\MPnumerator=\count99
-\makeMPintoPDFobject=\count100
-\everyMPtoPDFconversion=\toks17
+\nofMPsegments=\count105
+\nofMParguments=\count106
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count107
+\MPscratchDim=\dimen128
+\MPnumerator=\count108
+\makeMPintoPDFobject=\count109
+\everyMPtoPDFconversion=\toks18
 ) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -213,69 +264,88 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+Package csquotes Info: Making character " active on input line 18.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 16.
+(Font)              <14.4> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 16.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 62.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 62.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 62.
-<../graphics/plots/generous-a.png, id=1, 578.16pt x 361.35pt>
-File: ../graphics/plots/generous-a.png Graphic file (type png)
-
-<use ../graphics/plots/generous-a.png>
-Package pdftex.def Info: ../graphics/plots/generous-a.png used on input line 78
-.
-(pdftex.def)             Requested size: 500.484pt x 312.80054pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+(Font)              <7> on input line 19.
 [1
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<../graphics/plots/accident-n.png, id=12, 578.16pt x 361.35pt>
+Missing character: There is no ­ in font cmtt12!
+Missing character: There is no ­ in font cmtt12!
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 54.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 54.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 54.
+Missing character: There is no ­ in font cmtt12!
+Missing character: There is no ­ in font cmtt12!
+Missing character: There is no ­ in font cmtt12!
+Missing character: There is no ­ in font cmtt12!
+
+[2]
+Overfull \hbox (28.52156pt too wide) in paragraph at lines 93--94
+\OT1/cmr/m/n/12 amr[]word[]intoxicate, ra-dius3[]intoxicate, out[]degree[]1, am
+r[]arrest[]arg1[]person, dis-tance[]3, in-word[]resist,
+ []
+
+[3]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4] <../graphics/plots/generous-a.png, id=25, 578.16pt x 361.35pt>
+File: ../graphics/plots/generous-a.png Graphic file (type png)
+
+<use ../graphics/plots/generous-a.png>
+Package pdftex.def Info: ../graphics/plots/generous-a.png used on input line 13
+8.
+(pdftex.def)             Requested size: 400.38872pt x 250.24153pt.
+
+<../graphics/plots/accident-n.png, id=27, 578.16pt x 361.35pt>
 File: ../graphics/plots/accident-n.png Graphic file (type png)
 
 <use ../graphics/plots/accident-n.png>
-Package pdftex.def Info: ../graphics/plots/accident-n.png used on input line 85
-.
-(pdftex.def)             Requested size: 500.484pt x 312.80054pt.
+Package pdftex.def Info: ../graphics/plots/accident-n.png used on input line 14
+5.
+(pdftex.def)             Requested size: 400.38872pt x 250.24153pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[2 <../graphics/plots/generous-a.png> <../graphics/plots/accident-n.png>]
-<../graphics/plots/float-v.png, id=18, 578.16pt x 361.35pt>
+[5 <../graphics/plots/generous-a.png>]
+<../graphics/plots/float-v.png, id=32, 578.16pt x 361.35pt>
 File: ../graphics/plots/float-v.png Graphic file (type png)
 
 <use ../graphics/plots/float-v.png>
-Package pdftex.def Info: ../graphics/plots/float-v.png used on input line 92.
-(pdftex.def)             Requested size: 500.484pt x 312.80054pt.
- [3
-
- <../graphics/plots/float-v.png>]
-[4] [5] (./report.aux) ) 
+Package pdftex.def Info: ../graphics/plots/float-v.png used on input line 152.
+(pdftex.def)             Requested size: 400.38872pt x 250.24153pt.
+ [6 <../graphics/plots/accident-n.png> <../graphics/plots/float-v.png>] [7] [8]
+ [9] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 2070 strings out of 493117
- 30200 string characters out of 6135433
- 102642 words of memory out of 5000000
- 5521 multiletter control sequences out of 15000+600000
- 9416 words of font info for 33 fonts, out of 8000000 for 9000
+ 3363 strings out of 493117
+ 48092 string characters out of 6135433
+ 136797 words of memory out of 5000000
+ 6785 multiletter control sequences out of 15000+600000
+ 9278 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,7n,23p,243b,222s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmbx10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr17.pfb>
-Output written on report.pdf (5 pages, 1417539 bytes).
+ 38i,7n,24p,1196b,354s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmbx10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr17.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12
+.pfb>
+Output written on report.pdf (9 pages, 1488900 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
- 25 compressed objects within 1 object stream
+ 81 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
